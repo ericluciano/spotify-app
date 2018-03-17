@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="albums"></div>
+
+    <script src="../dist/spotify-app.umd.js"></script>
+    <script>
+      const albums = spotifyApp.searchAlbums('Tiesto');
+      const albumsEl = document.getElementById('albums');
+      albums
+        .then(data => {
+
+          markup = data.albums.items.map(item =>
+            `<img src='${item.images[0].url}' alt='${item.name}'>`
+          ).join('');
+          albumsEl.innerHTML = markup;
+        })
+    </script>
+  </body>
+</html>

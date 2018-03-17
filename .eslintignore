@@ -1,0 +1,4 @@
+tests/*
+lib/*
+dist/*
+webpack.config.babel.js
